@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5/Pqd9hzIW6NhEQlceMYLRHW/l25nSXKQAgqT1OMeImgfhJ0ku+VLlfA+iEvw56lnhe+ORI+Bjt4CXDUL2vO3Q==",
+  "success": true,
+  "projectFilePath": "I:\\Nueva carpeta (2)\\UNED\\PROGRAMACION AVANZADA EN WEB\\Proyecto1\\COVIDVaccinesEffectsRegistry\\COVIDVaccinesEffectsRegistry\\COVIDVaccinesEffectsRegistry.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
