@@ -1,0 +1,14 @@
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\bin\Debug\netcoreapp3.1\ToStringToSqlValue.exe
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\bin\Debug\netcoreapp3.1\ToStringToSqlValue.deps.json
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\bin\Debug\netcoreapp3.1\ToStringToSqlValue.runtimeconfig.json
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\bin\Debug\netcoreapp3.1\ToStringToSqlValue.runtimeconfig.dev.json
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\bin\Debug\netcoreapp3.1\ToStringToSqlValue.dll
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\bin\Debug\netcoreapp3.1\ToStringToSqlValue.pdb
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\obj\Debug\netcoreapp3.1\ToStringToSqlValue.csproj.AssemblyReference.cache
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\obj\Debug\netcoreapp3.1\ToStringToSqlValue.GeneratedMSBuildEditorConfig.editorconfig
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\obj\Debug\netcoreapp3.1\ToStringToSqlValue.AssemblyInfoInputs.cache
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\obj\Debug\netcoreapp3.1\ToStringToSqlValue.AssemblyInfo.cs
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\obj\Debug\netcoreapp3.1\ToStringToSqlValue.csproj.CoreCompileInputs.cache
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\obj\Debug\netcoreapp3.1\ToStringToSqlValue.dll
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\obj\Debug\netcoreapp3.1\ToStringToSqlValue.pdb
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\ToStringToSqlValue\ToStringToSqlValue\obj\Debug\netcoreapp3.1\ToStringToSqlValue.genruntimeconfig.cache
