@@ -17,7 +17,7 @@ namespace COVIDVaccinesEffectsRegistry.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateAsync(DoctorViewModel doctor)
+        public async Task<IActionResult> Index(DoctorViewModel doctor) //Guarda los datos del medico
         {
             if (ModelState.IsValid)
             {
