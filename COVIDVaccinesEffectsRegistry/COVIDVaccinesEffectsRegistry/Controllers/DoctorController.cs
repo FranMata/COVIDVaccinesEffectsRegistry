@@ -33,7 +33,7 @@ namespace COVIDVaccinesEffectsRegistry.Controllers
 
                 _context.Add(doctorEF);
                 await _context.SaveChangesAsync();
-                //return RedirectToAction(nameof(Index));
+                return Redirect(@"/Clinic");
             }
 
             return View(doctor);
