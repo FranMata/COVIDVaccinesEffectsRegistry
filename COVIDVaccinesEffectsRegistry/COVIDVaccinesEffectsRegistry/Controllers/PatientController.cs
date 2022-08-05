@@ -36,12 +36,13 @@ namespace COVIDVaccinesEffectsRegistry.Models.ViewModels
                     Email = patient.Email,
                     RegistryDate = patient.RegistryDate.ToString(),
                     Occupation = patient.Occupation,
-                    DoctorId = DoctorClinicData.DoctorId,
-                    ClinicId = DoctorClinicData.ClinicId
+                    DoctorId = DataToKeep.DoctorId,
+                    ClinicId = DataToKeep.ClinicId
                 };
                 _context.Add(patientEF);
                 await _context.SaveChangesAsync();
-                //return Redirect(@"/Clinic");
+                DataToKeep.PatientId = patientEF.Id;
+                return Redirect(@"/Vaccine");
             }
             return View(patient);
         }
