@@ -1,0 +1,78 @@
+﻿@model COVIDVaccinesEffectsRegistry.Models.ViewModels.PatientMedicalHistoryViewModel;
+
+
+<h1>Historial medico del paciente</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="HadCovidprevios" class="control-label"></label>
+                <select asp-for="HadCovidprevios" asp-items="ViewBag.Answers" class="form-control"></select>
+                <span asp-validation-for="HadCovidprevios" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="HadSuspicionCovid" class="control-label"></label>
+                <select asp-for="HadSuspicionCovid" asp-items="ViewBag.Answers" class="form-control"></select>
+                <span asp-validation-for="HadSuspicionCovid" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="HadCovidafter" class="control-label"></label>
+                <select asp-for="HadCovidafter" asp-items="ViewBag.Answers" class="form-control"></select>
+                <span asp-validation-for="HadCovidafter" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Reason" class="control-label"></label>
+                <input asp-for="Reason" class="form-control" />
+                <span asp-validation-for="Reason" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="IsPregnant" class="control-label"></label>
+                <select asp-for="IsPregnant" asp-items="ViewBag.Answers" class="form-control"></select>
+                <span asp-validation-for="IsPregnant" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="HadVaccineReaction" class="control-label"></label>
+                <select asp-for="HadVaccineReaction" asp-items="ViewBag.Answers" class="form-control"></select>
+                <span asp-validation-for="HadVaccineReaction" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="VaccineReactionDescription" class="control-label"></label>
+                <input asp-for="VaccineReactionDescription" class="form-control" />
+                <span asp-validation-for="VaccineReactionDescription" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ActualMedicine" class="control-label"></label>
+                <input asp-for="ActualMedicine" class="form-control" />
+                <span asp-validation-for="ActualMedicine" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MedicineAfterCovidveccine" class="control-label"></label>
+                <input asp-for="MedicineAfterCovidveccine" class="form-control" />
+                <span asp-validation-for="MedicineAfterCovidveccine" class="text-danger"></span>
+            </div>            
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn bg-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
