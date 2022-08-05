@@ -1,4 +1,5 @@
 ﻿using COVIDVaccinesEffectsRegistry.Models;
+using COVIDVaccinesEffectsRegistry.Models.OtherModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -33,9 +34,9 @@ namespace COVIDVaccinesEffectsRegistry.Controllers
 
                 _context.Add(doctorEF);
                 await _context.SaveChangesAsync();
+                DoctorClinicData.DoctorId = doctorEF.Id;
                 return Redirect(@"/Clinic");
             }
-
             return View(doctor);
         }
     }
