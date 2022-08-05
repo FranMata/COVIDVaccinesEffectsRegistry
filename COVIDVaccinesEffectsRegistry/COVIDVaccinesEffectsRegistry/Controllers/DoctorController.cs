@@ -34,7 +34,7 @@ namespace COVIDVaccinesEffectsRegistry.Controllers
 
                 _context.Add(doctorEF);
                 await _context.SaveChangesAsync();
-                DoctorClinicData.DoctorId = doctorEF.Id;
+                DataToKeep.DoctorId = doctorEF.Id;
                 return Redirect(@"/Clinic");
             }
             return View(doctor);
