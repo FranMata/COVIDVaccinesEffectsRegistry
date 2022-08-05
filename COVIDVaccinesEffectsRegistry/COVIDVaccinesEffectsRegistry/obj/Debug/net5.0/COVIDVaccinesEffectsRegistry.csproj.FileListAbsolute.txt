@@ -71,3 +71,4 @@ I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\COVIDVaccinesEf
 I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\COVIDVaccinesEffectsRegistry\COVIDVaccinesEffectsRegistry\obj\Debug\net5.0\Razor\Views\Clinic\Index.cshtml.g.cs
 I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\COVIDVaccinesEffectsRegistry\COVIDVaccinesEffectsRegistry\obj\Debug\net5.0\Razor\Views\Patient\Index.cshtml.g.cs
 I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\COVIDVaccinesEffectsRegistry\COVIDVaccinesEffectsRegistry\obj\Debug\net5.0\Razor\Views\Vaccine\Index.cshtml.g.cs
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto1\COVIDVaccinesEffectsRegistry\COVIDVaccinesEffectsRegistry\obj\Debug\net5.0\Razor\Views\PatientMedicalHistory\Index.cshtml.g.cs
