@@ -16,6 +16,19 @@ namespace COVIDVaccinesEffectsRegistry.Controllers
 
         public IActionResult Index() => View();
 
+        [HttpGet]
+        public IActionResult ValidateDoctor(int documentId, int professionalCode)
+        {
+            List<Doctor> doctors = _context.Doctors.ToList();
+            Doctor doctor = (Doctor)doctors.Where(e => e.DocumentId.Equals(documentId) && e.ProfessionalCode.Equals(professionalCode)).FirstOrDefault();
+
+            if (doctor == null)
+                return Json(0);
+
+            DataToKeep.DoctorId = professionalCode;
+            return Json(1);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(DoctorViewModel doctor) //Guarda los datos del medico
