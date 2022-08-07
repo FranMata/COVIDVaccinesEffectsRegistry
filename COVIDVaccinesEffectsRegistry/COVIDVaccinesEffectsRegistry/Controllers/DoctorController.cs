@@ -25,7 +25,7 @@ namespace COVIDVaccinesEffectsRegistry.Controllers
             if (doctor == null)
                 return Json(0);
 
-            DataToKeep.DoctorId = professionalCode;
+            DataToKeep.DoctorId = doctor.Id;
             return Json(1);
         }
 

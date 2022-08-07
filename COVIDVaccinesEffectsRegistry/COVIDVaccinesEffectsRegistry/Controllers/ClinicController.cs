@@ -2,6 +2,8 @@
 using COVIDVaccinesEffectsRegistry.Models.OtherModels;
 using COVIDVaccinesEffectsRegistry.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace COVIDVaccinesEffectsRegistry.Controllers
@@ -13,6 +15,19 @@ namespace COVIDVaccinesEffectsRegistry.Controllers
         public ClinicController(COVIDVaccinesEffectsContext context) => _context = context;
 
         public ActionResult Index() => View();
+
+        [HttpGet]
+        public IActionResult ValidateClinic(string name, int taxId)
+        {
+            List<Clinic> clinics = _context.Clinics.ToList();
+            Clinic clinic = (Clinic)clinics.Where(e => e.Name.Equals(name) && e.TaxId.Equals(taxId)).FirstOrDefault();
+
+            if (clinic == null)
+                return Json(0);
+
+            DataToKeep.ClinicId = clinic.Id;
+            return Json(1);
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
