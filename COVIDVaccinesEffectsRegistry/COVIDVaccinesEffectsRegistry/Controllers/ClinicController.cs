@@ -17,7 +17,7 @@ namespace COVIDVaccinesEffectsRegistry.Controllers
         public ActionResult Index() => View();
 
         [HttpGet]
-        public IActionResult ValidateDoctor(string name, int taxId)
+        public IActionResult ValidateClinic(string name, int taxId)
         {
             List<Clinic> clinics = _context.Clinics.ToList();
             Clinic clinic = (Clinic)clinics.Where(e => e.Name.Equals(name) && e.TaxId.Equals(taxId)).FirstOrDefault();

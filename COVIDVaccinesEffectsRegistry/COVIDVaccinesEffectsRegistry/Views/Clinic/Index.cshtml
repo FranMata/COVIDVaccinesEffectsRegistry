@@ -90,7 +90,7 @@
 
             $.ajax({
                 type: "GET",
-                url: '@Url.Action("ValidateDoctor")',
+                url: '@Url.Action("ValidateClinic")',
                 dataType: "json",
                 data: { name: name, taxId: taxId },
                 success: function (content) {
