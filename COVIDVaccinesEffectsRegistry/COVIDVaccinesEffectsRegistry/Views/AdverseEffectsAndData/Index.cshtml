@@ -1,0 +1,80 @@
+﻿@using COVIDVaccinesEffectsRegistry.Models.ViewModels;
+@model AdverseEffectsAndDataViewModel;
+
+<h1>Efectos adversos y registro de datos</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+
+            <div class="form-group">
+                <label asp-for="KeepSymptom" class="control-label"></label>
+                <select asp-for="KeepSymptom" asp-items="ViewBag.Answers" class="form-control"></select>
+                <span asp-validation-for="KeepSymptom" class="text-danger"></span>
+            </div>
+
+            <label class="control-label">¿Alergias conocidas?</label>
+            <br />
+            @for (int i = 0; i < Model.allergyViewModels.Count; i++)
+            {
+                @Html.CheckBoxFor(model => model.allergyViewModels[i].IsChecked)
+                <label class="control-label">@Model.allergyViewModels[i].Name</label>
+                @Html.HiddenFor(model => model.allergyViewModels[i].Id)
+                <br />
+            }
+
+            <div class="form-group">
+                <label asp-for="AllergyDescription" class="control-label"></label>
+                <input asp-for="AllergyDescription" class="form-control" />
+                <span asp-validation-for="AllergyDescription" class="text-danger"></span>
+            </div>
+
+            <label class="control-label">
+                Nuevas enfermedades desde su inyección de COVID (marque todas las que
+                correspondan):
+            </label>
+            <br />
+            @for (int i = 0; i < Model.deseaseViewModel.Count; i++)
+            {
+                @Html.CheckBoxFor(model => model.deseaseViewModel[i].IsChecked)
+                <label class="control-label">@Model.deseaseViewModel[i].Name</label>
+                @Html.HiddenFor(model => model.deseaseViewModel[i].Id)
+                <br />
+            }
+
+            <div class="form-group">
+                <label asp-for="OtherConditions" class="control-label"></label>
+                <input asp-for="OtherConditions" class="form-control" />
+                <span asp-validation-for="OtherConditions" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TypeNewCancer" class="control-label"></label>
+                <input asp-for="TypeNewCancer" class="form-control" />
+                <span asp-validation-for="TypeNewCancer" class="text-danger"></span>
+            </div>
+
+            <label class="control-label">Sintomas</label>
+            <br />
+            @for (int i = 0; i < Model.symptomViewModel.Count; i++)
+            {
+                @Html.CheckBoxFor(model => model.symptomViewModel[i].IsChecked)
+                <label class="control-label">@Model.symptomViewModel[i].Name</label>
+                @Html.HiddenFor(model => model.symptomViewModel[i].Id)
+                <br />
+            }
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn bg-primary" id="DataToFill" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
