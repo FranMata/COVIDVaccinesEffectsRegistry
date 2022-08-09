@@ -15,6 +15,19 @@ namespace COVIDVaccinesEffectsRegistry.Models.ViewModels
         public PatientController(COVIDVaccinesEffectsContext context) => _context = context;
         public ActionResult Index() => View();
 
+        [HttpGet]
+        public IActionResult ValidatePatient(int documentId)
+        {
+            List<Patient> patients = _context.Patients.ToList();
+            Patient patient = (Patient)patients.Where(e => e.DocumentId.Equals(documentId)).FirstOrDefault();
+
+            if (patient == null)
+                return Json(0);
+
+            DataToKeep.PatientId = patient.Id;
+            return Json(1);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(PatientViewModel patient)

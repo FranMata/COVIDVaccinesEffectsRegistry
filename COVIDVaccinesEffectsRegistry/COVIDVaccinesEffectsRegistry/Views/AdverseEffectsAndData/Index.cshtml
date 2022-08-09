@@ -9,6 +9,16 @@
     <div class="col-md-4">
         <form asp-action="Create">
 
+            <label class="control-label">Resultado del evento adverso o de los síntomas (marque todo lo que corresponda):</label>
+            <br />
+            @for (int i = 0; i < Model.eventSymptomResultViewModel.Count; i++)
+            {
+                @Html.CheckBoxFor(model => model.eventSymptomResultViewModel[i].IsChecked)
+                <label class="control-label">@Model.eventSymptomResultViewModel[i].Name</label>
+                @Html.HiddenFor(model => model.eventSymptomResultViewModel[i].Id)
+                <br />
+            }
+
             <div class="form-group">
                 <label asp-for="KeepSymptom" class="control-label"></label>
                 <select asp-for="KeepSymptom" asp-items="ViewBag.Answers" class="form-control"></select>

@@ -12,6 +12,7 @@ namespace COVIDVaccinesEffectsRegistry.Models
             AdverseEffects = new HashSet<AdverseEffect>();
             AllergyRegistereds = new HashSet<AllergyRegistered>();
             DiseaseRegistereds = new HashSet<DiseaseRegistered>();
+            EventSymptomResultRegistereds = new HashSet<EventSymptomResultRegistered>();
             PatientMedicalHistories = new HashSet<PatientMedicalHistory>();
             SymptomRegistereds = new HashSet<SymptomRegistered>();
             Vaccines = new HashSet<Vaccine>();
@@ -39,6 +40,7 @@ namespace COVIDVaccinesEffectsRegistry.Models
         public virtual ICollection<AdverseEffect> AdverseEffects { get; set; }
         public virtual ICollection<AllergyRegistered> AllergyRegistereds { get; set; }
         public virtual ICollection<DiseaseRegistered> DiseaseRegistereds { get; set; }
+        public virtual ICollection<EventSymptomResultRegistered> EventSymptomResultRegistereds { get; set; }
         public virtual ICollection<PatientMedicalHistory> PatientMedicalHistories { get; set; }
         public virtual ICollection<SymptomRegistered> SymptomRegistereds { get; set; }
         public virtual ICollection<Vaccine> Vaccines { get; set; }

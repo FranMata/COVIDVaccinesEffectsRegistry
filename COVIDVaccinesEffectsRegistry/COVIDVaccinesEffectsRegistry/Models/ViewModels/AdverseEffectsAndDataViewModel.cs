@@ -23,5 +23,6 @@ namespace COVIDVaccinesEffectsRegistry.Models.ViewModels
         public List<AllergyViewModel> allergyViewModels { get; set; }
         public List<DeseaseViewModel> deseaseViewModel { get; set; }
         public List<SymptomViewModel> symptomViewModel { get; set; }
+        public List<EventSymptomResultViewModel> eventSymptomResultViewModel { get; set; }
     }    
 }

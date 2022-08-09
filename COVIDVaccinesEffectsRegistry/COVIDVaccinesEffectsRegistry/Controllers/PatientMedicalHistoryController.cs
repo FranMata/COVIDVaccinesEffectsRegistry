@@ -41,7 +41,7 @@ namespace COVIDVaccinesEffectsRegistry.Controllers
                 };
                 _context.Add(patientMedicalHistoryEF);
                 await _context.SaveChangesAsync();
-                return Redirect(@"/Clinic");
+                return Redirect(@"/AdverseEffectsAndData");
             }
             return View(patientMedicalHistory);
         }

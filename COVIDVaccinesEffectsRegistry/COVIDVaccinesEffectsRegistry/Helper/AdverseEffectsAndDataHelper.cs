@@ -108,5 +108,38 @@ namespace COVIDVaccinesEffectsRegistry.Helper
             });
             return symptoms;
         }
+
+        public static List<EventSymptomResultViewModel> BuildEventSymptomResultViewModel(List<EventSymptomResult> symptom)
+        {
+            List<EventSymptomResultViewModel> symptomViewModels = new List<EventSymptomResultViewModel>();
+
+            symptom.ForEach(e =>
+            {
+                symptomViewModels.Add(new EventSymptomResultViewModel()
+                {
+                    Id = e.Id,
+                    Name = e.Name,
+                    IsChecked = false
+                });
+            });
+            return symptomViewModels;
+        }
+
+        public static List<EventSymptomResultRegistered> BuildEventSymptomResult(List<EventSymptomResultViewModel> eventSymptomResultViewModel, int patientId)
+        {
+            List<EventSymptomResultRegistered> eventSymptomResult = new List<EventSymptomResultRegistered>();
+
+            List<EventSymptomResultViewModel> eventSymptomResultChecked = eventSymptomResultViewModel.Where(e => e.IsChecked).ToList();
+
+            eventSymptomResultChecked.ForEach(e =>
+            {
+                eventSymptomResult.Add(new EventSymptomResultRegistered()
+                {
+                    EventSymptomResultId = e.Id,
+                    PatientId = patientId
+                });
+            });
+            return eventSymptomResult;
+        }
     }   
 }

@@ -25,6 +25,8 @@ namespace COVIDVaccinesEffectsRegistry.Models
         public virtual DbSet<Disease> Diseases { get; set; }
         public virtual DbSet<DiseaseRegistered> DiseaseRegistereds { get; set; }
         public virtual DbSet<Doctor> Doctors { get; set; }
+        public virtual DbSet<EventSymptomResult> EventSymptomResults { get; set; }
+        public virtual DbSet<EventSymptomResultRegistered> EventSymptomResultRegistereds { get; set; }
         public virtual DbSet<Patient> Patients { get; set; }
         public virtual DbSet<PatientMedicalHistory> PatientMedicalHistories { get; set; }
         public virtual DbSet<Symptom> Symptoms { get; set; }
@@ -35,6 +37,8 @@ namespace COVIDVaccinesEffectsRegistry.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=DESKTOP-4GCB4GD;Database=COVIDVaccinesEffects;Trusted_Connection=True;");
             }
         }
 
@@ -166,6 +170,30 @@ namespace COVIDVaccinesEffectsRegistry.Models
                 entity.Property(e => e.Province)
                     .HasMaxLength(80)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<EventSymptomResult>(entity =>
+            {
+                entity.ToTable("EventSymptomResult");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<EventSymptomResultRegistered>(entity =>
+            {
+                entity.ToTable("EventSymptomResultRegistered");
+
+                entity.HasOne(d => d.EventSymptomResult)
+                    .WithMany(p => p.EventSymptomResultRegistereds)
+                    .HasForeignKey(d => d.EventSymptomResultId)
+                    .HasConstraintName("FK__EventSymp__Event__5EBF139D");
+
+                entity.HasOne(d => d.Patient)
+                    .WithMany(p => p.EventSymptomResultRegistereds)
+                    .HasForeignKey(d => d.PatientId)
+                    .HasConstraintName("FK__EventSymp__Patie__5FB337D6");
             });
 
             modelBuilder.Entity<Patient>(entity =>

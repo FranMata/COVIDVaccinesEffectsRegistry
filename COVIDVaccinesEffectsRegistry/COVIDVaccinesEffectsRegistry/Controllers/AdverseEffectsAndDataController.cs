@@ -23,6 +23,7 @@ namespace COVIDVaccinesEffectsRegistry.Controllers
 
             ViewData["Answers"] = new SelectList(_context.Answers, "Id", "Aswer");
 
+            adverseEffectsAndDataViewModel.eventSymptomResultViewModel = AdverseEffectsAndDataHelper.BuildEventSymptomResultViewModel(_context.EventSymptomResults.ToList());
             adverseEffectsAndDataViewModel.allergyViewModels = AdverseEffectsAndDataHelper.BuildAllergyViewModel(_context.Allergies.ToList());
             adverseEffectsAndDataViewModel.deseaseViewModel = AdverseEffectsAndDataHelper.BuildDeseaseViewModel(_context.Diseases.ToList());
             adverseEffectsAndDataViewModel.symptomViewModel = AdverseEffectsAndDataHelper.BuildSymptomViewModel(_context.Symptoms.ToList());
@@ -44,8 +45,21 @@ namespace COVIDVaccinesEffectsRegistry.Controllers
                 AdverseEffectsAndDataHelper.BuildSymptom(
                     adverseEffectsAndData.symptomViewModel, DataToKeep.PatientId));
 
+            _context.EventSymptomResultRegistereds.AddRange(
+                AdverseEffectsAndDataHelper.BuildEventSymptomResult(
+                    adverseEffectsAndData.eventSymptomResultViewModel, DataToKeep.PatientId));
+
+            _context.Add(new AdverseEffect()
+            {
+                KeepSymptom = adverseEffectsAndData.KeepSymptom,
+                AllergyDescription = adverseEffectsAndData.AllergyDescription,
+                OtherConditions = adverseEffectsAndData.OtherConditions,
+                TypeNewCancer = adverseEffectsAndData.TypeNewCancer,
+                PatientId = DataToKeep.PatientId
+            });
+
             _context.SaveChanges();
-            return View();
+            return Redirect(@"/");
         }
     }
 }
