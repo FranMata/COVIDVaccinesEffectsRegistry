@@ -139,3 +139,17 @@ CREATE TABLE DiseaseRegistered(
 	FOREIGN KEY (DeseaseId) REFERENCES Disease(Id),
 	FOREIGN KEY (PatientId) REFERENCES Patient(Id),
 );
+
+CREATE TABLE EventSymptomResult(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	Name VARCHAR(100)	
+);
+
+CREATE TABLE EventSymptomResultRegistered(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	PatientId INT,
+	EventSymptomResultId INT,
+
+	FOREIGN KEY (EventSymptomResultId) REFERENCES EventSymptomResult(Id),
+	FOREIGN KEY (PatientId) REFERENCES Patient(Id),
+);
